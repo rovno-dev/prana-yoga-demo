@@ -1,18 +1,188 @@
 import Link from 'next/link';
 import SectionTitle from '../components/SectionTitle';
 
-const heroImg='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=2200&q=88';
-const spaces=[
- ['Баррикадная','Зоологическая улица, 4','+7 (495) 617-02-05'],
- ['Тимирязевская','Дмитровское шоссе, 9 стр. 2','+7 (495) 617-02-03'],
- ['Войковская','Старопетровский проезд, 1 стр. 2','+7 (495) 617-02-04']
+const spaces = [
+  ['Баррикадная', 'Зоологическая улица, 4', '+7 (495) 617-02-05'],
+  ['Тимирязевская', 'Дмитровское шоссе, 9 стр. 2', '+7 (495) 617-02-03'],
+  ['Войковская', 'Старопетровский проезд, 1 стр. 2', '+7 (495) 617-02-04']
 ];
-export default function Home(){return <main>
- <section className="hero"><div className="container hero-content"><div className="eyebrow">МОСКВА · 3 ЦЕНТРА · ОНЛАЙН</div><h1>Йога, к которой хочется возвращаться.</h1><p>Пространство для внимательной практики: от первого занятия до глубокой работы с телом, дыханием и вниманием.</p><div className="hero-actions"><Link className="btn btn-light" href="/schedule">Выбрать занятие</Link><Link className="btn btn-ghost" href="/beginners">Я новичок</Link></div></div></section>
- <section className="section"><div className="container"><SectionTitle eyebrow="ПРАНА" title="Всё, что нужно для своей практики — в одном месте." text="«Прана» объединяет разные направления йоги, профессиональных преподавателей и комфортную инфраструктуру. Мы сохраняем главное из философии центра: выбор, бережность и доступность."/><div className="stats"><div className="stat"><strong>24</strong><span>современных зала по данным текущего сайта</span></div><div className="stat"><strong>3</strong><span>центра в Москве</span></div><div className="stat"><strong>60+</strong><span>занятий в день по материалам центра</span></div></div></div></section>
- <section className="section" style={{paddingTop:0}}><div className="container"><div className="card split"><img src={"https://s316klg.storage.yandex.net/rdisk/28b699688c1b30a2dba19562bf03fbcfcad8417d4d0780bccc63056f25a632e7/6aa4b4ee/PDhW01IlDwiKxN3pF4M3LfG7kuKPgDjNJ5kvEP6jIzUjRwlIQxYkpvWV6O_bADGdKvu_D-s8ixC4ZxhjEmt9ig==?uid=1954717888&filename=Firefly_RemoveBackground%20%281%29.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1954717888&fsize=47835&hid=4e652dc71a5a214ea3f3463cdeb0ad69&media_type=image&tknv=v3&is_direct_zip_experiment=1&etag=4071cc790d511efe221adf89859d6314&ts=65b3fb9c49780&s=08d6f553e4d61316bb995327c0ff1d182f6bc588e0a7357f56989cb98d97abf0&pb=U2FsdGVkX18j9okW1g3hItQQSPH-Vhb18HUATKCGEtf3eiQ5VAG1AOeA-iYQ_045WX9OtzG0Mn4NLfCYBdooGuA7AVB9L9mqDFCpajg04lw"} alt="Практика йоги"/><div className="split-copy"><div className="eyebrow">ДЛЯ НАЧИНАЮЩИХ</div><h2>Начать можно спокойно.</h2><p>Не нужно быть гибким или иметь опыт. Выберите подходящий уровень, приходите в удобный центр и двигайтесь в своём темпе.</p><Link className="btn" href="/beginners">Первые шаги →</Link></div></div></div></section>
- <section className="section dark-section"><div className="container"><SectionTitle light eyebrow="НАПРАВЛЕНИЯ" title="Найдите практику под своё состояние." text="От спокойной Прана-йоги до динамичной Аштанги, от работы с дыханием до медитации — соберите расписание, которое подходит именно вам."/><div className="feature-grid">{[['Прана-йога','Сила, гибкость, внимание и бережная вариативность практики.'],['Аштанга-йога','Традиционная последовательность асан, дыхание и дисциплина регулярной практики.'],['Пранаяма','Работа с дыханием и вниманием — от основ до углублённых программ.'],['Хатха-йога','Классическая практика с акцентом на тело, дыхание и осознанность.'],['Йогатерапия','Системный подход к движению и поддержке качества жизни.'],['Медитация','Практики концентрации, наблюдения и внутренней тишины.']].map(([a,b])=><article className="card feature" key={a}><span className="pill">ПРАКТИКА</span><h3>{a}</h3><p>{b}</p><Link href="/services">Подробнее →</Link></article>)}</div></div></section>
- <section className="section"><div className="container"><SectionTitle eyebrow="СЕЙЧАС В ЦЕНТРЕ" title="События, ради которых хочется прийти лично."/><div className="grid" style={{marginTop:42}}>{[['9–11 октября 2026','Весеннее очищение и детокс','Выездной формат · ретритный центр «Елисей»'],['19–20 сентября','Сила дыхания: основы пранаямы','Практический семинар · Войковская'],['17 октября — 14 ноября','Претичерс по Аштанга-йоге','Войковская + Zoom']].map(x=><div className="card list-card" key={x[1]}><div className="eyebrow">{x[0]}</div><div><h3>{x[1]}</h3><div className="muted">{x[2]}</div></div><Link className="btn" href="/seminars">Подробнее</Link></div>)}</div></div></section>
- <section className="section" style={{paddingTop:0}}><div className="container"><SectionTitle eyebrow="ТРИ АДРЕСА" title="Выберите центр, который ближе к вам."/><div className="feature-grid" style={{gridTemplateColumns:'repeat(3,1fr)'}}>{spaces.map(s=><div className="card feature" key={s[0]}><span className="pill">МОСКВА</span><h3>{s[0]}</h3><p>{s[1]}<br/>{s[2]}</p><Link href="/contacts">Как добраться →</Link></div>)}</div></div></section>
- <section className="cta-band"><div className="container cta-inner"><div><div className="eyebrow">ПЕРВОЕ ЗАНЯТИЕ</div><h2>Приходите на коврик.</h2></div><Link className="btn" href="/schedule">Открыть расписание</Link></div></section>
- </main>}
+
+export default function Home() {
+  return (
+    <main>
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/hero-poster.jpg"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+          <source src="/hero.webm" type="video/webm" />
+        </video>
+
+        {/* Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+
+        {/* Hero Content */}
+        <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-3xl mx-auto">
+            {/* Eyebrow */}
+            <div className="text-xs sm:text-sm font-medium tracking-[0.2em] text-gray-300 uppercase mb-6">
+              МОСКВА · 3 ЦЕНТРА · ОНЛАЙН
+            </div>
+
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
+              Йога, к которой хочется возвращаться.
+            </h1>
+
+            {/* Paragraph */}
+            <p className="text-base sm:text-lg text-gray-200 mb-10 max-w-2xl mx-auto">
+              Пространство для внимательной практики: от первого занятия до глубокой работы с телом, дыханием и вниманием.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/schedule"
+                className="bg-white text-[#1A2F23] px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors w-full sm:w-auto text-center"
+              >
+                Выбрать занятие
+              </Link>
+              <Link
+                href="/beginners"
+                className="border border-white/50 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-white/10 transition-colors w-full sm:w-auto text-center"
+              >
+                Я новичок
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionTitle eyebrow="ПРАНА" title="Всё, что нужно для своей практики — в одном месте." text="«Прана» объединяет разные направления йоги, профессиональных преподавателей и комфортную инфраструктуру. Мы сохраняем главное из философии центра: выбор, бережность и доступность." />
+          <div className="stats">
+            <div className="stat"><strong>24</strong><span>современных зала по данным текущего сайта</span></div>
+            <div className="stat"><strong>3</strong><span>центра в Москве</span></div>
+            <div className="stat"><strong>60+</strong><span>занятий в день по материалам центра</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          {/* Card Container */}
+          <div className="flex flex-col md:flex-row bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm max-w-6xl mx-auto">
+
+            {/* Image Container - Square */}
+            <div className="w-full md:w-1/2 aspect-square">
+              <img
+                src="./yoga.png"
+                alt="yoga-image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+              <div className="text-xs tracking-widest text-gray-500 uppercase mb-4">
+                ДЛЯ НАЧИНАЮЩИХ
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 leading-tight">
+                Начать можно спокойно.
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg mb-8 max-w-md">
+                Не нужно быть гибким или иметь опыт. Выберите подходящий уровень, приходите в удобный центр и двигайтесь в своём темпе.
+              </p>
+              <Link
+                href="/beginners"
+                className="inline-flex text-white! items-center justify-center bg-[#1A2F23] text-white py-4 px-8 rounded-full text-sm font-medium hover:bg-[#2a4a36] transition-colors w-fit"
+              >
+                Первые шаги →
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section className="section dark-section">
+        <div className="container">
+          <SectionTitle light eyebrow="НАПРАВЛЕНИЯ" title="Найдите практику под своё состояние." text="От спокойной Прана-йоги до динамичной Аштанги, от работы с дыханием до медитации — соберите расписание, которое подходит именно вам." />
+          <div className="feature-grid">
+            {[
+              ['Прана-йога', 'Сила, гибкость, внимание и бережная вариативность практики.'],
+              ['Аштанга-йога', 'Традиционная последовательность асан, дыхание и дисциплина регулярной практики.'],
+              ['Пранаяма', 'Работа с дыханием и вниманием — от основ до углублённых программ.'],
+              ['Хатха-йога', 'Классическая практика с акцентом на тело, дыхание и осознанность.'],
+              ['Йогатерапия', 'Системный подход к движению и поддержке качества жизни.'],
+              ['Медитация', 'Практики концентрации, наблюдения и внутренней тишины.']
+            ].map(([a, b]) => (
+              <article className="card feature" key={a}>
+                <span className="pill">ПРАКТИКА</span>
+                <h3>{a}</h3>
+                <p>{b}</p>
+                <Link href="/services">Подробнее →</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionTitle eyebrow="СЕЙЧАС В ЦЕНТРЕ" title="События, ради которых хочется прийти лично." />
+          <div className="grid" style={{ marginTop: 42 }}>
+            {[
+              ['9–11 октября 2026', 'Весеннее очищение и детокс', 'Выездной формат · ретритный центр «Елисей»'],
+              ['19–20 сентября', 'Сила дыхания: основы пранаямы', 'Практический семинар · Войковская'],
+              ['17 октября — 14 ноября', 'Претичерс по Аштанга-йоге', 'Войковская + Zoom']
+            ].map(x => (
+              <div className="card list-card" key={x[1]}>
+                <div className="eyebrow">{x[0]}</div>
+                <div>
+                  <h3>{x[1]}</h3>
+                  <div className="muted">{x[2]}</div>
+                </div>
+                <Link className="btn" href="/seminars">Подробнее</Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <SectionTitle eyebrow="ТРИ АДРЕСА" title="Выберите центр, который ближе к вам." />
+          <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
+            {spaces.map(s => (
+              <div className="card feature" key={s[0]}>
+                <span className="pill">МОСКВА</span>
+                <h3>{s[0]}</h3>
+                <p>{s[1]}<br />{s[2]}</p>
+                <Link href="/contacts">Как добраться →</Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-band">
+        <div className="container cta-inner">
+          <div>
+            <div className="eyebrow">ПЕРВОЕ ЗАНЯТИЕ</div>
+            <h2>Приходите на коврик.</h2>
+          </div>
+          <Link className="btn" href="/schedule">Открыть расписание</Link>
+        </div>
+      </section>
+    </main>
+  );
+}
