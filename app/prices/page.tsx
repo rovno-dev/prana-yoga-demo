@@ -1,3 +1,71 @@
 import Link from 'next/link';
-const plans=[['Разовое занятие','от 700 ₽','Для знакомства с направлением или разового визита.',['1 занятие','Выбор центра и направления','Подходит новичкам']],['Абонемент','от 2 000 ₽','Удобный формат для регулярной практики.',['Несколько занятий','Экономичнее разовых визитов','Действует по условиям тарифа']],['Старт для новичка','2 000 ₽','Пример актуального предложения «Йога Старт» на Тимирязевской.',['3 занятия по 1,5 часа','Срок — 14 дней с первого посещения','Только для новых гостей']]];
-export default function Prices(){return <main><div className="container section"><div className="eyebrow">ЦЕНЫ</div><h1 className="serif" style={{fontSize:'clamp(52px,7vw,90px)',lineHeight:.95,margin:'14px 0 22px'}}>Практика должна быть доступной.</h1><p style={{fontSize:18,lineHeight:1.75,maxWidth:720,color:'#69736c'}}>На сайте «Праны» действует несколько форматов оплаты. Ниже — новая понятная витрина; перед запуском проекта цены нужно синхронизировать с действующим прайс-листом.</p><div className="price-grid">{plans.map((p,i)=><article className={i===2?'price-card featured card':'price-card card'} key={p[0]}><span className="pill">{i===2?'НОВИЧКАМ':'ФОРМАТ'}</span><h3>{p[0]}</h3><div className="price">{p[1]}</div><p style={{lineHeight:1.65}}>{p[2]}</p><ul>{p[3].map(x=><li key={x}>✓ {x}</li>)}</ul><Link className="btn" href="/contacts">Уточнить условия</Link></article>)}</div><div className="notice" style={{marginTop:20}}>Цены и специальные предложения меняются. На официальном сайте сейчас публикуются отдельные акции, включая «Йога Старт» на Тимирязевской за 2 000 ₽ и 3 занятия для новичков Аштанги за 2 100 ₽.</div></div></main>}
+
+type Plan = [
+  name: string,
+  price: string,
+  description: string,
+  features: string[]
+];
+
+const plans: Plan[] = [
+  [
+    'Разовое занятие',
+    'от 700 ₽',
+    'Для знакомства с направлением или разового визита.',
+    ['1 занятие', 'Выбор центра и направления', 'Подходит новичкам']
+  ],
+  [
+    'Абонемент',
+    'от 2 000 ₽',
+    'Удобный формат для регулярной практики.',
+    ['Несколько занятий', 'Экономичнее разовых визитов', 'Действует по условиям тарифа']
+  ],
+  [
+    'Старт для новичка',
+    '2 000 ₽',
+    'Пример актуального предложения «Йога Старт» на Тимирязевской.',
+    ['3 занятия по 1,5 часа', 'Срок — 14 дней с первого посещения', 'Только для новых гостей']
+  ]
+];
+
+export default function Prices() {
+  return (
+    <main>
+      <div className="container section">
+        <div className="eyebrow">ЦЕНЫ</div>
+        <h1
+          className="serif"
+          style={{
+            fontSize: 'clamp(52px,7vw,90px)',
+            lineHeight: 0.95,
+            margin: '14px 0 22px'
+          }}
+        >
+          Практика должна быть доступной.
+        </h1>
+        <p style={{ fontSize: 18, lineHeight: 1.75, maxWidth: 720, color: '#69736c' }}>
+          На сайте «Праны» действует несколько форматов оплаты. Ниже — новая понятная витрина; перед запуском проекта цены нужно синхронизировать с действующим прайс-листом.
+        </p>
+        <div className="price-grid">
+          {plans.map((p, i) => (
+            <article className={i === 2 ? 'price-card featured card' : 'price-card card'} key={p[0]}>
+              <span className="pill">{i === 2 ? 'НОВИЧКАМ' : 'ФОРМАТ'}</span>
+              <h3>{p[0]}</h3>
+              <div className="price">{p[1]}</div>
+              <p style={{ lineHeight: 1.65 }}>{p[2]}</p>
+              <ul>
+                {p[3].map((x) => (
+                  <li key={x}>✓ {x}</li>
+                ))}
+              </ul>
+              <Link className="btn" href="/contacts">Уточнить условия</Link>
+            </article>
+          ))}
+        </div>
+        <div className="notice" style={{ marginTop: 20 }}>
+          Цены и специальные предложения меняются. На официальном сайте сейчас публикуются отдельные акции, включая «Йога Старт» на Тимирязевской за 2 000 ₽ и 3 занятия для новичков Аштанги за 2 100 ₽.
+        </div>
+      </div>
+    </main>
+  );
+}
