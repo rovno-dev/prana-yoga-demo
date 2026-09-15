@@ -1,0 +1,1 @@
+export default function SectionTitle({eyebrow,title,text,light=false}:{eyebrow:string,title:string,text?:string,light?:boolean}){return <div className={light?'section-title light':'section-title'}><div className="eyebrow">{eyebrow}</div><h2>{title}</h2>{text&&<p>{text}</p>}</div>}
